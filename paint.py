@@ -1,6 +1,12 @@
 import svgwrite
 import sys
 
+def myLine(image, fromPoint, toPoint, color):
+	image.add(image.line(fromPoint, toPoint, stroke=color))
+
+def myText(image, possition, text, color):
+	image.add(image.text(text, insert=possition, fill=color))
+
 img = svgwrite.Drawing(filename='hmatnik.svg', size=(1060, 400), debug=True)
 img.add(img.rect(insert=(0, 0), size=('100%', '100%'), rx=None, ry=None, fill='rgb(255,255,255)'))
 
@@ -17,26 +23,32 @@ tones = [['f', 'f#', 'g', 'g#', 'a', 'b', 'h', 'c', 'c#', 'd', 'd#', 'e'],
          ['b', 'h', 'c', 'c#', 'd', 'd#', 'e', 'f', 'f#', 'g', 'g#', 'a'],
          ['f', 'f#', 'g', 'g#', 'a', 'b', 'h', 'c', 'c#', 'd', 'd#', 'e']]
 
+color = "black"
+
 # paint strings
-for i in range(7):
+myLine(img, (50, 50), (1010, 50), color)
+for i in range(6):
     color = "black"
-    img.add(img.line((50, 50 + i*50), (1010, 50 + i*50), stroke=color))
-    if i != 6:
-        if tuning[i] in input_tones:
-            color = "red"
-        img.add(img.text(tuning[i], insert=(30, 80 + i*50), fill=color))
+    myLine(img, (50, 50 + (i+1)*50), (1010, 50 + (i+1)*50), color)
+    if tuning[i] in input_tones:
+        color = "red"
+    myText(img, (30, 80 + i*50), tuning[i], color)
+
+color = "black"
 
 # paint bars
-for i in range(13):
-    img.add(img.line((50 + i*80, 50), (50 + i*80, 350), stroke='black'))
-    if i != 12:
-        img.add(img.text(i+1, insert=(80 + i*80, 30), fill='black'))
+myLine(img, (50, 50), (50, 350), color)
+for i in range(12):
+    myLine(img, (50 + (i+1)*80, 50), (50 + (i+1)*80, 350), color)
+    myText(img, (80 + i*80, 30), str(i+1), color)
+
+color = "red"
 
 # paint tones
 for string in range(6):
     for bar in range(12):
         if tones[string][bar] in input_tones:
-            img.add(img.text(tones[string][bar], insert=(85 + bar*80, 30 + (string + 1)*50), fill='red'))
+        	myText(img, (85 + bar*80, 30 + (string + 1)*50), tones[string][bar], color)
 
-img.add(img.text("tones: " + ", ".join(sorted(input_tones)), insert=(50, 380), fill='black'))
+myText(img, (50, 380), "tones: " + ", ".join(sorted(input_tones)), color)
 img.save()
