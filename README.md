@@ -1,12 +1,17 @@
-# GuitarTonesVisual
+# TonesVisual
 
-Script for visualisating given tones on the guitar neck
+Script for visualisating given tones on the guitar or violin neck
 
 ------------------------
 
 Usage:
 
-    python paint.py "tone1 tone2 ... toneN"
+    python guitar.py "tone1 tone2 ... toneN"
+    
+or:
+
+    python violin.py "tone1 tone2 ... toneN"
+    
 
 > In order to use it, python package svgwrite is needed. You can install it by 
     
