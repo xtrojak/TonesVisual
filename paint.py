@@ -37,12 +37,12 @@ def getViolinAttributes():
     return size, 4, tones, default_tuning
 
 def getGuitarAttributes():
-    tones = [['f', 'f#', 'g', 'g#', 'a', '#a', 'h', 'c', 'c#', 'd', 'd#', 'e'],
-             ['c', 'c#', 'd', 'd#', 'e', 'f', 'f#', 'g', 'g#', 'a', '#a', 'h'],
-             ['g#', 'a', '#a', 'h', 'c', 'c#', 'd', 'd#', 'e', 'f', 'f#', 'g'],
-             ['d#', 'e', 'f', 'f#', 'g', 'g#', 'a', '#a', 'h', 'c', 'c#', 'd'],
-             ['#a', 'h', 'c', 'c#', 'd', 'd#', 'e', 'f', 'f#', 'g', 'g#', 'a'],
-             ['f', 'f#', 'g', 'g#', 'a', '#a', 'h', 'c', 'c#', 'd', 'd#', 'e']]
+    tones = [['f', 'f#', 'g', 'g#', 'a', 'a#', 'h', 'c', 'c#', 'd', 'd#', 'e'],
+             ['c', 'c#', 'd', 'd#', 'e', 'f', 'f#', 'g', 'g#', 'a', 'a#', 'h'],
+             ['g#', 'a', 'a#', 'h', 'c', 'c#', 'd', 'd#', 'e', 'f', 'f#', 'g'],
+             ['d#', 'e', 'f', 'f#', 'g', 'g#', 'a', 'a#', 'h', 'c', 'c#', 'd'],
+             ['a#', 'h', 'c', 'c#', 'd', 'd#', 'e', 'f', 'f#', 'g', 'g#', 'a'],
+             ['f', 'f#', 'g', 'g#', 'a', 'a#', 'h', 'c', 'c#', 'd', 'd#', 'e']]
     default_tuning = ['e', 'h', 'g', 'd', 'a', 'e']
     size = 100
     return size, 6, tones, default_tuning
