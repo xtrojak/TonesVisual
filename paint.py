@@ -32,7 +32,7 @@ def getViolinAttributes():
              ['a#', 'h', 'c', 'c#', 'd', 'd#', 'e', 'f', 'f#', 'g', 'g#', 'a'],
              ['d#', 'e', 'f', 'f#', 'g', 'g#', 'a', 'a#', 'h', 'c', 'c#', 'd'],
              ['g#', 'a', 'a#', 'h', 'c', 'c#', 'd', 'd#', 'e', 'f', 'f#', 'g']]
-    default_tuning = ['g', 'd', 'a', 'e']
+    default_tuning = ['e', 'a', 'd', 'g']
     size = 0
     return size, 4, tones, default_tuning
 
